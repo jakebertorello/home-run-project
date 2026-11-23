@@ -107,11 +107,11 @@ function App() {
 
   useEffect(() => {
     Promise.all([
-      fetch('/data/hits.json').then((res) => {
+      fetch(`${import.meta.env.BASE_URL}data/hits.json`).then((res) => {
         if (!res.ok) throw new Error('Could not load hits')
         return res.json()
       }),
-      fetch('/data/stadiums.json').then((res) => {
+      fetch(`${import.meta.env.BASE_URL}data/stadiums.json`).then((res) => {
         if (!res.ok) throw new Error('Could not load stadium geometry')
         return res.json()
       }),
